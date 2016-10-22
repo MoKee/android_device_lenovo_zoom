@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,14 +11,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-$(call inherit-product, device/lenovo/zoom/full_zoom.mk)
+LOCAL_PATH:= $(call my-dir)
+# HAL module implemenation stored in
+# hw/<COPYPIX_HARDWARE_MODULE_ID>.<ro.board.platform>.so
+include $(CLEAR_VARS)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+LOCAL_SRC_FILES := lights.c
+LOCAL_MODULE_RELATIVE_PATH    := hw
+LOCAL_SHARED_LIBRARIES := liblog libcutils
 
-PRODUCT_NAME := cm_zoom
-BOARD_VENDOR := Lenovo
+LOCAL_MODULE := lights.msm8916
+LOCAL_MODULE_TAGS := optional
 
-PRODUCT_GMS_CLIENTID_BASE := android-lenovo
+include $(BUILD_SHARED_LIBRARY)

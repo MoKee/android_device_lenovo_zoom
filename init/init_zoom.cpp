@@ -99,6 +99,8 @@ void vendor_load_properties()
     check_device();
     init_alarm_boot_properties();
 
+    property_set("bootmode", "charger");
+
     property_set("dalvik.vm.heapstartsize", heapstartsize);
     property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
     property_set("dalvik.vm.heapsize", heapsize);

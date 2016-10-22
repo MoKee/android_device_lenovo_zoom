@@ -18,5 +18,3 @@ Display | 1080 x 1920 pixels, 5.0" IPS
 Rear Camera  | 13.0 MP, LED flash
 Front Camera | 5.0 MP
 Release Date | January 2016
-
-![Xiaomi Redmi 3](http://cdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-3-0.jpg "Xiaomi Redmi 3")
