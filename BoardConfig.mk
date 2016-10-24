@@ -55,8 +55,6 @@ TARGET_KERNEL_SOURCE := kernel/lenovo/msm8939
 TARGET_KERNEL_CONFIG := cyanogenmod_zoom_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
-BLOCK_BASED_OTA := true
-
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
