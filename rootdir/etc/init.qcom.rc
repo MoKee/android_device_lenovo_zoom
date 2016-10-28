@@ -740,6 +740,12 @@ service wcnss-service /system/bin/wcnss_service
     group system wifi radio
     oneshot
 
+service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
+    class core
+    user root
+    group root
+    disabled
+
 # bugreport is triggered by developer options
 service bugreport /system/bin/dumpstate -d -p -B \
         -o /data/data/com.android.shell/files/bugreports/bugreport
