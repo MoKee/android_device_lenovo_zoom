@@ -112,10 +112,6 @@ PRODUCT_PACKAGES += \
     memtrack.msm8916 \
     liboverlay
 
-# GPS
-PRODUCT_PACKAGES += \
-    gps.msm8916
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
     $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
@@ -126,6 +122,10 @@ PRODUCT_COPY_FILES += \
 # IPC Router Configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
+
+# IRQ Balancer
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -195,9 +195,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     calmodule.cfg
 
-# Thermal Configuration
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
+# Telephony-ext
+PRODUCT_PACKAGES += telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
 
 # Wifi
 PRODUCT_PACKAGES += \

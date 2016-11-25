@@ -16,7 +16,7 @@
 
 $(call inherit-product, device/lenovo/zoom/full_zoom.mk)
 
-# Inherit some common CM stuff.
+# Inherit some common MK stuff.
 $(call inherit-product, vendor/mk/config/common_full_phone.mk)
 
 PRODUCT_NAME := mk_zoom

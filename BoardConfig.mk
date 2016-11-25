@@ -42,7 +42,7 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8916
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=tty60,115200,n8 androidboot.console=tty60 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
+BOARD_KERNEL_CMDLINE := console=tty60,115200,n8 androidboot.console=tty60 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x02000000
@@ -51,11 +51,9 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/lenovo/LA.BR.1.2.7_rb1.33
+TARGET_KERNEL_SOURCE := kernel/lenovo/msm8939
 TARGET_KERNEL_CONFIG := cyanogenmod_zoom_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-
-BLOCK_BASED_OTA := true
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -75,16 +73,21 @@ BLUETOOTH_HCI_USE_MCT := true
 QCOM_BT_USE_BTNV := true
 
 # Bootanimation
+TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # Camera
 TARGET_USE_VENDOR_CAMERA_EXT := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
 # CNE and DPM
 BOARD_USES_QCNE := true
 TARGET_LDPRELOAD := libNimsWrap.so
+
+# GPS
+TARGET_NO_RPC := true
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
@@ -117,9 +120,6 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_zoom
 # FM
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
-
-# Malloc
-MALLOC_IMPL := dlmalloc
 
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
