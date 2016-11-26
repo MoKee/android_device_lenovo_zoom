@@ -92,7 +92,7 @@ TARGET_NO_RPC := true
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
-# CMHW
+# MKHW
 BOARD_HARDWARE_CLASS += hardware/mokee/mkhw
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc.0/78b9000.i2c/i2c-5/5-0020/input/input0/wake_gesture"
 
